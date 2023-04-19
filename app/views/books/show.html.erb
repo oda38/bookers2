@@ -1,0 +1,17 @@
+<div>
+  <%= flash[:notice] %>
+</div>
+
+
+
+
+<h1>Book detail</h1>
+
+<div>
+  <%= image_tag @book.get_image %>
+  <p><%= @book.user.name %></p>
+  <p><%= link_to @book.id, books_path %></p>
+  <p><%= @book.body %></p>
+  <p><%= link_to "Edit", edit_book_path(@book.id) %></p>
+  <p><%= link_to "Destroy", books_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか?" %></p>
+</div>
