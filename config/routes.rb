@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   resources :books, only: [:create, :index, :show, :destroy, :edit, :update]
   
+  resources :users, only: [:show, :edit]
   
  ## get 'books/index' => 'books#index', as: "books"
  

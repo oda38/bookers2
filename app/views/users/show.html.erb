@@ -1,11 +1,9 @@
-<!-- 複数ユーザーが投稿したブック一覧ページ -->
-
+<!-- ユーザーページ -->
 
 
 <h1>User info</h1>
-<p></p>
-
-
+<p>name</p>
+<p>introduction</p>
 
 
 
@@ -20,7 +18,6 @@
   
   
   
- 
   
 <h1>Books</h1>
     <thead>
@@ -33,8 +30,11 @@
 
 <% @books.each do |book| %>
 <div>
-  <%= image_tag @book.get_image %>
+  <%= image_tag book.get_image %>
   <td><%= link_to "@book.id", book_path(book.id) %></td>
   <td><%= book.body %></td>
   <% end %>
 </div>
+
+  
+  
