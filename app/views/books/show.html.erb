@@ -23,7 +23,7 @@
 <div>
   <%= image_tag @book.get_image %>
   <p><%= @book.user.name %></p>
-  <p><%= link_to @book.id, books_path %></p>
+  <p><%= link_to @book.title, books_path %></p>
   <p><%= @book.body %></p>
   <p><%= link_to "Edit", edit_book_path(@book.id) %></p>
   <% if @book.user == current_user %>
