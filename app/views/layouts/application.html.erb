@@ -30,28 +30,28 @@
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-      
-      
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+    
+    
     <% if user_signed_in? %>
       
-      <li>
+      <li class="mx-1">
         <%= link_to user_session_path do %>
         <i class="fas fa-home"></i>Home
         <% end %>
       </li>
-      <li>
+      <li class="mx-1">
         <%= link_to users_path do %>
         <i class="fas fa-users"></i>Users
         <% end %>
       </li> 
-      <li>
+      <li class="mx-1">
         <%= link_to books_path do %>
         <i class="fas fa-book-open"></i>Books
         <% end %>
       </li>
-      <li>
+      <li class="mx-1">
         <%= link_to destroy_user_session_path, method: :delete do %>
         <i class="fas fa-sign-out-alt"></i>Log out
         <% end %>
