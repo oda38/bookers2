@@ -10,16 +10,16 @@
 
 
 
-<div class="col-md-3">
+ <div class="col-md-3">
 
- <h2>User info</h2>
-  <table class="table">
-     <% if @user.profile_image.attached? %>
-      <%= image_tag @user.profile_image, size: "100x100" %>
-     <% else %>
-      <%= image_tag 'no_image', size: "100x100" %>
-     <% end %>
-    <thead>
+  <h2>User info</h2>
+   <table class="table">
+      <% if @user.profile_image.attached? %>
+       <%= image_tag @user.profile_image, size: "100x100" %>
+      <% else %>
+       <%= image_tag 'no_image', size: "100x100" %>
+      <% end %>
+     <thead>
       <tr>
         <th>name</th>
         <th><%= @user.name %></th>
@@ -28,45 +28,45 @@
         <th>introduction</th>
         <th><%= @user.introduction %></th>
       </tr>
-    </thead>
+     </thead>
    </table>
  
  
    <%= link_to edit_user_path(@user) do %>
    <button type="button" class="btn btn-outline-secondary btn-block">
  　<i class="fas fa-user-cog"></i>
-　　</button>
+　 </button>
 　 <% end %>
 
 
- <h2>New book</h2>
+  <h2>New book</h2>
  
   
-  <% if @new_book.errors.any? %>
-  <%= @new_book.errors.count %>error prohibited this obj from being saved:
-  <ul>
-    <% @new_book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-  <% end %>
+   <% if @new_book.errors.any? %>
+   <%= @new_book.errors.count %>error prohibited this obj from being saved:
+    <ul>
+      <% @new_book.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+      <% end %>
+    </ul>
+   <% end %>
  
  
-  <%= form_with model: @new_book do |f| %>
-    <h4>Title</h4>
+   <%= form_with model: @new_book do |f| %>
+     <h4>Title</h4>
       <%= f.text_field :title %>
-    <h4>Opinion</h4>
+     <h4>Opinion</h4>
       <%= f.text_area :body %>
-    <%= f.submit 'Create Book' %>
-  <% end %>
+     <%= f.submit 'Create Book' %>
+   <% end %>
   
-</div>
+ </div>
 
 
-<div class="col-md-8 offset-md-1">
- <table class="table table-striped">
+ <div class="col-md-8 offset-md-1">
+  <table class="table table-striped">
 
- <h2>Book detail</h2>
+  <h2>Book detail</h2>
 
    <thead>
         <tr>
@@ -78,7 +78,7 @@
               <% end %>
               <%= link_to @user.name, user_path(@user.id) %>
             </td>
-            <td><%= link_to @book.title, books_path %></td>
+            <td><%= link_to @book.title, book_path(@book.id) %></td>
             <td><%= @book.body %></td>
             <td>
               <% if @book.user == current_user %>
@@ -92,8 +92,8 @@
         </tr>
     </thead>
 
- </table>
-</div>
+  </table>
+ </div>
 
 </div>
 </div>

@@ -4,10 +4,10 @@
 <div class="row"> 
 
 
-<div class="col-md-3">
+ <div class="col-md-3">
 
 
- <h2>User info</h2>
+  <h2>User info</h2>
    <table class="table">
      <% if current_user.profile_image.attached? %>
       <%= image_tag current_user.profile_image, size: "100x100" %>
@@ -57,19 +57,19 @@
  </div>
 
 
-<div class="col-md-8 offset-md-1">  
-<table class="table table-striped">
+ <div class="col-md-8 offset-md-1">  
+  <table class="table table-striped">
   
-<h2>Users</h2>
+  
+  <h2>Users</h2>
 
-
- <thead>
+    <thead>
       <tr>
         <th colspan="1"></th>
         <th>image</th>
         <th>name</th>
       </tr>
-  </thead>
+    </thead>
   
   
    <% @users.each do |user| %>
@@ -90,7 +90,7 @@
  
  
  
-</div>
+ </div>
 
 </div>
 </div>

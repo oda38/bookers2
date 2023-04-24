@@ -8,21 +8,26 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-    flash[:notice] = "Welcome! You have signed up successfully."
-    redirect_to users_path(@user.id)
+     flash[:notice] = "Welcome! You have signed up successfully."
+     redirect_to users_path(@user.id)
     else
-    render :top
+     render :top
     end
   end
   
   
   def show
     @new_book = Book.new
-    @books = Book.all
+    @user = User.find(params[:id])
+    @books = @user.books
   end
 
 
   def edit
+    user = User.find(params[:id])
+     unless user.id == current_user.id
+    redirect_to user_path(current_user.id)
+     end
     @user = User.find(params[:id])
   end
   
